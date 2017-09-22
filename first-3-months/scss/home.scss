@@ -1,0 +1,219 @@
+.front-page-icon-module {
+
+  padding-bottom: 50px;
+    
+  h2 {
+    text-align: center;
+  }
+  
+  .front-page-image-module__icon-ctn {
+    
+    margin-top: 50px;
+
+    @include tablet {
+      @include flex(row, wrap, center, center);
+    }
+
+    .front-page-icon-module__item {
+
+      text-align: center;
+      width: 100%;
+      max-width: 450px;
+      margin: 0 auto;
+
+      .front-page-icon-module__icon {
+        width: 75px;
+      }
+
+    }
+
+    .front-page-icon-module__item:first-child:nth-last-child(2),
+    .front-page-icon-module__item:first-child:nth-last-child(2) ~ .front-page-icon-module__item {
+        
+        &:first-of-type {
+          margin-bottom: 50px;
+        }
+
+    }
+
+    .front-page-icon-module__item:first-child:nth-last-child(3),
+    .front-page-icon-module__item:first-child:nth-last-child(3) ~ .front-page-icon-module__item {
+        margin-bottom: 50px;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+    }
+
+    
+    @include tablet {
+        
+        .front-page-icon-module__item {
+
+          max-width: none;
+          padding: 0 50px;
+
+        }
+
+        .front-page-icon-module__item:first-child:nth-last-child(1) {
+            width: 100%;
+        }
+
+        .front-page-icon-module__item:first-child:nth-last-child(2),
+        .front-page-icon-module__item:first-child:nth-last-child(2) ~ .front-page-icon-module__item {
+            width: 50%;
+            margin-bottom: 0;
+        }
+
+        .front-page-icon-module__item:first-child:nth-last-child(3),
+        .front-page-icon-module__item:first-child:nth-last-child(3) ~ .front-page-icon-module__item {
+            width: calc(100%/3);
+            margin-bottom: 0;
+        }
+
+    }
+
+  }
+
+}
+
+.front-page-image-module {
+
+  h2 {
+    text-align: center;
+  }
+
+  .front-page-image-module__courses-ctn {
+  
+    .front-page-image-module__course-ctn {
+        
+        position: relative;
+    }
+
+    .front-page-image-module__overlay {
+
+      background-color: rgba(48,48,54,0.2);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+
+    }
+
+    .front-page-image-module__course-wrapper {
+      
+      position: relative;
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+
+      @include tablet {
+        height: 500px;
+      }
+
+      svg {
+        z-index: 3;
+        height: 400px;
+        opacity: 0.9;
+        fill: $pink;
+
+        @include tablet {
+          height: 500px;
+        }
+      }
+
+      .front-page-image-module__content {
+        position: absolute;
+        top: 40px;
+        left: 20px;
+        color: $white;
+        z-index: 4;
+
+        @include tablet {
+          top: 90px;
+          left: 40px;
+        }
+
+        .front-page-image-module__heading {
+          width: 100%;
+          max-width: 180px;
+
+          @include tablet {
+            max-width: 250px;
+          }
+        }
+
+        .front-page-image-module__description {
+          width: 100%;
+          max-width: 225px;
+
+          @include tablet {
+            max-width: 325px;
+          }
+
+        }
+
+        .front-page-image-module__link {
+          display: inline-block;
+          padding: 5px 8px;
+          perspective: 1000px;
+          color: $white;
+
+          &:hover {
+            color: $charcoal;
+
+            &:before {
+              transform: rotateX(0);
+            }
+          }
+
+          &:before {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: $white;
+            transform-origin: 50% 100%;
+            transform: rotateX(-85deg);
+            transition: transform 0.3s; 
+          }
+
+        }
+
+      }
+
+    }
+
+    .front-page-image-module__course-ctn:nth-child(even) {
+
+      svg {
+        transform: scaleX(-1);
+        filter: FlipH;
+        fill: $charcoal;
+        position: absolute;
+        right: 0;
+      }
+
+      .front-page-image-module__content {
+        right: 20px;
+        text-align: right;
+
+        @include tablet {
+          right: 40px;
+        }
+
+        .front-page-image-module__heading, .front-page-image-module__description {
+          margin-left: auto;
+        }
+
+      }
+
+    }
+
+  }
+}

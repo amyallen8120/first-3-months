@@ -1,0 +1,145 @@
+// loader
+.pong-loader {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 40px;
+  width: 6px;
+  background-color: transparent;
+  animation: paddles 0.75s ease-out infinite;
+  transform: translate3d(0,0,0);
+  
+  &:before {
+    content: "";
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 15px;
+    width: 10px;
+    height: 10px;
+    background-color: $pink;
+    border-radius: 50%;
+    animation: ballbounce 0.6s ease-out infinite;
+  }
+}
+
+@keyframes paddles {
+  0% {
+    box-shadow: -25px -10px 0px $pink, 25px 10px 0px $pink;
+  }
+  50% {
+    box-shadow: -25px 8px 0px $pink, 25px -10px 0px $pink;
+  }
+  100% {
+    box-shadow: -25px -10px 0px $pink, 25px 10px 0px $pink;
+  }
+}
+
+@keyframes ballbounce {
+  0%{
+    transform: translateX(-20px) scale(1,1.2);
+  }
+  25%{
+    transform: scale(1.2,1);
+  }
+  50% {
+    transform: translateX(15px) scale(1,1.2);
+  }
+  75% {
+    transform: scale(1.2,1);
+  }
+  100% {
+    transform: translateX(-20px);
+  }
+}
+
+
+header {
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    padding: 0 50px;
+    text-align: center;
+    transition: all 0.3s;
+
+    @include tablet {
+        height: 90px;
+    }
+
+    .header__container {
+        @include tablet {
+            @include flex(row, wrap, space-between, center);
+            line-height: 50px;
+        }
+
+        .header__logo {
+            color: $white;
+            padding-top: 10px;
+            line-height: 0.5;
+
+            @include tablet {
+                padding-top: 0;
+            }
+
+            span {
+                color: $pink;
+            }
+        }
+
+        .header__nav {
+
+            ul {
+                padding-left: 0;
+                white-space: nowrap;
+            }
+
+            li {
+                display: block;
+
+                @include tablet {
+                    display: inline;
+                }
+
+                a {
+                    display: block;
+                    color: $white;
+                    margin: 8px 0;
+                    transition: all 0.3s;  
+
+                    @include tablet {
+                        display: inline;
+                        margin: 0 0 0 30px;
+                    } 
+
+                    &:hover {
+                        color: $pink;
+                    }    
+                }
+            }
+        }
+    }
+}
+
+.header--small {
+    margin-top: -15px;
+
+    @include tablet {
+        height: 75px;
+    }
+}
+
+
+.header--charcoal {
+    background-color: $charcoal;
+}
+
+.hero-banner {
+        
+    z
+}

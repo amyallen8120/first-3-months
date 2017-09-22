@@ -1,0 +1,32 @@
+.caldera_forms_form {
+	
+	max-width: 800px;
+	margin: 0 auto;
+
+	h2 {
+		span {
+			color: $pink;
+		}
+	}
+
+	.field_required {
+		color: $pink !important;
+	}
+
+	.btn {
+		@include font-size($p-font-sizes);
+		background-color: $pink !important;
+		color: $white !important;
+		border: 2px solid $pink !important;
+		padding: 0 20px !important;
+		line-height: 40px !important;
+		height: auto !important;
+		border-radius: 20px !important;
+		transition: all 0.2s;
+
+		&:hover {
+			background-color: transparent !important;
+			color: $pink !important;
+		}
+	}
+}
